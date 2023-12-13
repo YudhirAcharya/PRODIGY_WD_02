@@ -1,4 +1,3 @@
-let timer;
 let isStarted = false;
 let secCounter = 0;
 let msecCounter = 0;
@@ -6,6 +5,8 @@ let mCounter = 0;
 let onStartSec;
 let onStartmSec;
 let onStartMinute;
+
+let lapTimesArray = [];
 
 //importing the states
 const display = document.getElementById("timeDisplay");
@@ -80,11 +81,26 @@ const reset = () => {
   minute.innerHTML = "00";
   second.innerHTML = "00";
   msecond.innerHTML = "00";
-
+  lapTimes.innerHTML = "";
+  lapTimesArray = [];
   document.getElementById("btnJS").src =
     "/images/play-button-arrowhead.png";
 };
 
-const lap = () => {};
+const lap = () => {
+  console.log("lap created");
+  if (isStarted) {
+    const lapTime = {
+      minutes: mCounter,
+      seconds: secCounter,
+      mSeconds: msecCounter,
+    };
+    lapTimesArray.push(lapTime);
+    const lapTimeDisplay = document.createElement("li");
+    lapTimeDisplay.innerHTML = `Lap ${lapTimesArray.length}: ${lapTime.minutes}:${lapTime.seconds}:${lapTime.mSeconds}`;
+    lapTimes.appendChild(lapTimeDisplay);
+  }
+};
 startPauseBtn.addEventListener("click", start);
 resetBtn.addEventListener("click", reset);
+lapBtn.addEventListener("click", lap);

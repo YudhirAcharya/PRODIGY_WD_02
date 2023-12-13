@@ -75,3 +75,6 @@ button:hover {
 img {
   width: 50px;
 }
+#lapTimes {
+  list-style: none;
+}
