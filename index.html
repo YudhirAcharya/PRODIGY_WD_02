@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Stopwatch</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation&family=Nanum+Gothic&family=Orbitron&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="stopwatch">
+      <div class="display">
+        <div id="timeDisplay">
+          <div id="minute">00</div>
+          :
+          <div id="second">00</div>
+          :
+          <div id="msecond">00</div>
+        </div>
+        <div class="timeButtons">
+          <button id="reset">
+            <span>Reset</span>
+            <img src="/images/reset.png" alt="reset" />
+          </button>
+          <button id="startPause">
+            <span id="startPauseJS">Start</span>
+            <img
+              id="btnJS"
+              src="/images/play-button-arrowhead.png"
+              alt="playPause"
+            />
+          </button>
+          <button id="lap">
+            <span>Lap</span>
+            <img src="/images/running-track.png" alt="" />
+          </button>
+        </div>
+        <div id="lapTimes"></div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
